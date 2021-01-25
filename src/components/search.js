@@ -22,23 +22,24 @@ const clearIconDark = require('../assets/clear-icon-dark.png')
 
 const styles = StyleSheet.create({
   searchContainer: {
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: 16,
+    paddingRight: 16,
     paddingTop: 2,
     paddingBottom: 2,
     height: 52,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    borderBottomWidth: 1,
+    // borderBottomWidth: 1,
+    borderRadius: 12,
   },
   searchContainerLight: {
-    backgroundColor: '#eceff1',
-    borderBottomColor: '#e0e0e0',
+    backgroundColor: '#F5F6FA',
+    // borderBottomColor: '#e0e0e0',
   },
   searchContainerDark: {
     backgroundColor: '#13100e',
-    borderBottomColor: '#1f1f1f',
+    // borderBottomColor: '#1f1f1f',
   },
   searchInput: {
     flex: 1,
@@ -70,6 +71,7 @@ const styles = StyleSheet.create({
   },
 })
 
+
 export default class Search extends React.PureComponent {
   static propTypes /* remove-proptypes */ = {
     onSearch: PropTypes.func,
@@ -82,7 +84,6 @@ export default class Search extends React.PureComponent {
     emojiProps: PropTypes.object.isRequired,
     theme: PropTypes.oneOf(['light', 'dark']),
   }
-
   static defaultProps = {
     onSearch: () => {},
     onPressClose: () => {},
@@ -197,7 +198,7 @@ export default class Search extends React.PureComponent {
               ? styles.searchInputLight
               : styles.searchInputDark,
           ]}
-          placeholderTextColor={theme === 'light' ? '#878787' : '#787878'}
+          placeholderTextColor={theme === 'light' ? '#969EB0' : '#B3B3B3'}
           ref={this.setRef}
           value={searchTerm}
           onChangeText={this.handleChange}

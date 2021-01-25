@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
   emojiMartPickerLight: {
     color: '#222427',
-    backgroundColor: '#eceff1',
+    backgroundColor: '#fff',
   },
   emojiMartPickerDark: {
     color: '#fff',

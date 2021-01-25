@@ -16,31 +16,38 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   anchorsLight: {
-    borderTopColor: '#f6f7f8',
-    backgroundColor: '#e4e7e9',
+    borderTopColor: '#fff',
+    backgroundColor: '#fff',
   },
   anchorsDark: {
-    borderTopColor: '#090807',
-    backgroundColor: '#1b1816',
+    borderTopColor: '#333336',
+    backgroundColor: '#333336',
   },
   anchor: {
     flex: 1,
-    paddingTop: 12.5,
-    paddingBottom: 12.5,
-    paddingLeft: 18,
-    paddingRight: 18,
+    paddingTop: 6,
+    paddingBottom: 6,
+    paddingLeft: 12,
+    paddingRight: 12,
     overflow: 'hidden',
+    borderRadius: 12,
   },
-  anchorBar: {
-    position: 'absolute',
-    bottom: -2,
-    left: 0,
-    right: 0,
-    height: 2,
+  anchorSelectedLight: {
+    backgroundColor: '#F0F2F5',
   },
-  anchorBarSelected: {
-    bottom: 0,
+  anchorSelectedDark: {
+    backgroundColor: '#212121',
   },
+  // anchorBar: {
+  //   position: 'absolute',
+  //   bottom: -2,
+  //   left: 0,
+  //   right: 0,
+  //   height: 2,
+  // },
+  // anchorBarSelected: {
+  //   bottom: 0,
+  // },
 })
 
 export default class Anchors extends React.PureComponent {
@@ -154,6 +161,7 @@ export default class Anchors extends React.PureComponent {
                   style={[
                     styles.anchor,
                     isSelected ? styles.anchorSelected : null,
+                    isSelected ? theme === 'light' ? styles.anchorSelectedLight : styles.anchorSelectedDark : null,
                   ]}
                 >
                   <NimbleEmoji
